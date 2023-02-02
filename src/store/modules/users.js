@@ -16,7 +16,7 @@ const mutations = {
 
 const actions = {
   async fetchUsers({ commit }) {
-    const response = await axios.get('http://84.246.85.252:3000/users');
+    const response = await axios.get('https://84.246.85.252:3000/users');
     commit('SET_USERS', response.data);
   },
   setActiveUser({ commit }, user) {
