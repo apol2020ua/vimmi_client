@@ -1,6 +1,6 @@
 <template>
   <div>
-    <UserDetailsPresenter
+    <UserDetailsContainer
       :activeUser="activeUser"
     />
   </div>
@@ -8,7 +8,7 @@
 
 <script>
 import { mapActions, mapState } from 'vuex';
-import UserDetailsPresenter from '@/components/presenters/UserDetailsPresenter.vue';
+import UserDetailsContainer from "@/entities/user-details/UserDetailsContainer.vue";
 
 export default {
   computed: {
@@ -22,7 +22,7 @@ export default {
     }),
   },
   components: {
-    UserDetailsPresenter,
+    UserDetailsContainer
   },
 };
 </script>

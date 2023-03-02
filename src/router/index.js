@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import UsersListContainer from '@/components/containers/UsersListContainer.vue';
-import UserDetailsContainer from "@/components/containers/UserDetailsContainer.vue";
+import userListRouter from '@/entities/user-list/user-list.router';
+import userDetailsRouter from '@/entities/user-details/user-details.router';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,16 +10,8 @@ const router = createRouter({
       name: 'home',
       redirect: '/users',
     },
-    {
-      path: '/users',
-      name: 'users',
-      component: UsersListContainer,
-    },
-    {
-      path: '/users/:id',
-      component: UserDetailsContainer,
-      props: true,
-    },
+    ...userListRouter,
+    ...userDetailsRouter,
   ],
 });
 
